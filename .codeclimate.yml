@@ -1,12 +1,45 @@
-languages:
-  Ruby: true
-  JavaScript: true
+engines:
+  brakeman:
+    enabled: true
+  csslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      - javascript
+      - python
+      - php
+    exclude_paths:
+    - "gems/pending/fs/fat32/directory_entry.rb"
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+ratings:
+  paths:
+  - Gemfile.lock
+  - "**.erb"
+  - "**.haml"
+  - "**.rb"
+  - "**.rhtml"
+  - "**.slim"
+  - "**.css"
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
 exclude_paths:
-- "app/assets/javascripts/dhtmlx*/*"
-- "app/assets/javascripts/dynatree*/*"
-- "gems/pending/spec/*"
-- "gems/pending/test/*"
-- "gems/pending/*/test/*"
-- "public/javascripts/timeline/*"
-- "spec/*"
-- "test/*"
+- app/assets/javascripts/dhtmlx*/*
+- app/assets/javascripts/dynatree*/*
+- gems/pending/spec/*
+- gems/pending/test/*
+- gems/pending/*/test/*
+- public/javascripts/timeline/*
+- spec/*
+- test/*
